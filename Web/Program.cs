@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace LaptopControl
+namespace LaptopControlWeb
 {
     public class Program
     {
@@ -21,7 +21,6 @@ namespace LaptopControl
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://*:5000");
                 });
     }
 }

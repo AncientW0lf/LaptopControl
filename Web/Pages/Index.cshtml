@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form method="post">
+    <label for="volSlider" class="form-label">Volume</label>
+    <input id="volSlider" class="form-range" type="range" min="0" max="100" value="@Model.Volume" asp-for="Volume"
+        oninput="updateVolDisplay(this.value)" />
+    <button class="btn btn-primary" type="submit">Change volume</button>
+    <p id="volDisplay">@Model.Volume</p>
+</form>
+
+<script>
+    const display = document.getElementById("volDisplay");
+
+    function updateVolDisplay(val) {
+        display.innerHTML = val;
+    }
+</script>
